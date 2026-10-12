@@ -1,0 +1,88 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: kubesphere
+    component: $APP_NAME
+    tier: backend
+  name: $APP_NAME
+  namespace: $PROJECT_NAME
+spec:
+  progressDeadlineSeconds: 600
+  replicas: 1
+  selector:
+    matchLabels:
+      app: kubesphere
+      component: $APP_NAME
+      tier: backend
+  template:
+    metadata:
+      labels:
+        app: kubesphere
+        component: $APP_NAME
+        tier: backend
+    spec:
+      containers:
+        - env:
+            - name: CACHE_IGNORE
+              value: js|html
+            - name: CACHE_PUBLIC_EXPIRATION
+              value: 3d
+          image: $REGISTRY/$DOCKERHUB_NAMESPACE/$APP_NAME-$BRANCH_NAME:$APP_VERSION-$BUILD_NUMBER
+          livenessProbe:
+            httpGet:
+              path: /
+              port: 80
+              scheme: HTTP
+            initialDelaySeconds: 600
+            timeoutSeconds: 5
+            periodSeconds: 30
+            successThreshold: 1
+            failureThreshold: 3
+          readinessProbe:
+            httpGet:
+              path: /
+              port: 80
+            timeoutSeconds: 10
+            failureThreshold: 30
+            periodSeconds: 5
+          imagePullPolicy: IfNotPresent
+          name: $APP_NAME-$BRANCH_NAME
+          ports:
+            - containerPort: 80
+              protocol: TCP
+#          resources:
+#            limits:
+#              cpu: 300m
+#              memory: 600Mi
+#            requests:
+#              cpu: 100m
+#              memory: 100Mi
+          terminationMessagePath: /dev/termination-log
+          terminationMessagePolicy: File
+      dnsPolicy: ClusterFirst
+      restartPolicy: Always
+      terminationGracePeriodSeconds: 30
+---
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    app: kubesphere
+    component: $APP_NAME
+  name: $APP_NAME
+  namespace: $PROJECT_NAME
+spec:
+  ports:
+    - name: http
+      port: 80
+      protocol: TCP
+      targetPort: 80
+      nodePort: 20080
+  selector:
+    app: kubesphere
+    component: $APP_NAME
+    tier: backend
+  sessionAffinity: None
+  type: NodePort

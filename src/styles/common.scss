@@ -1,0 +1,65 @@
+/* 改变主题色变量 */
+$--color-primary: #336DF3;
+/* 改变 icon 字体路径变量，必需 */
+$--font-path: '~element-ui/lib/theme-chalk/fonts';
+@import "~element-ui/packages/theme-chalk/src/index";
+
+// 全局变量
+@import './variables.scss';
+// ele样式覆盖
+@import './element-ui.scss';
+// 顶部右侧显示
+@import './top.scss';
+// 导航标签
+@import './tags.scss';
+// 工具类函数
+@import './mixin.scss';
+// 侧面导航栏
+@import './sidebar.scss';
+// 动画
+@import './animate/vue-transition.scss';
+//主题
+@import './theme/index.scss';
+
+//通用配置
+@import './normalize.scss';
+
+// flex布局
+@import './flex.scss';
+
+// 布局
+@import './layout.scss';
+
+
+a{
+  text-decoration: none;
+  color:#333;
+}
+*{
+  outline: none;
+}
+//滚动条样式
+@include scrollBar;
+
+.router-link {
+  color: $--color-primary;
+}
+.protocol {
+  color: $--color-primary;
+  font-weight: bold;
+  cursor: pointer;
+  font-size: 14px;
+  margin-right: 8px;
+}
+
+// 去掉输入框右侧箭头
+/* 针对Webkit内核的浏览器 */
+input[type=number]::-webkit-outer-spin-button,
+input[type=number]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+/* 针对Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}

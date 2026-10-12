@@ -1,0 +1,110 @@
+//main
+$pageMinWidth: 1200px;
+$phoneMinWidth: 90%;
+$primaryColor: #336DF3;
+
+//main
+$mainBg: #409eff;
+$theme: #336DF3;
+$dhBorder: #e8eaec;
+$dhFontColor: #303030;
+$grayColor: #606060;
+$grayColor2: #909090;
+$color: #78818e;
+$tableBg: #eaedf2;
+:export {
+  themeColor: $theme;
+}
+.auto-wrap {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+@mixin autoWrap {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+@mixin flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.flow-rect-name {
+  position: absolute;
+  padding: 3px 0px 0px 3px;
+  font-style: italic;
+  color: #a9a989;
+  font-size: 12px;
+  @include autoWrap;
+}
+.flex-comm {
+  display: flex;
+  align-items: center;
+  > i {
+    width: 20px;
+    margin-left: 10px;
+    flex: none;
+    font-size: 16px;
+    color: $theme;
+    cursor: pointer;
+  }
+}
+
+// 富文本编辑器
+.editor-content-view {
+  ::v-deep img,
+  ::v-deep video {
+    max-width: 100%;
+  }
+  ::v-deep p,
+  ::v-deep li {
+    white-space: pre-wrap; /* 保留空格 */
+    padding: 8px 0;
+  }
+
+  ::v-deep blockquote {
+    border-left: 8px solid #d0e5f2;
+    padding: 10px 10px;
+    margin: 10px 0;
+    background-color: #f1f1f1;
+  }
+
+  ::v-deep code {
+    font-family: monospace;
+    background-color: #eee;
+    padding: 3px;
+    border-radius: 3px;
+  }
+  ::v-deep pre > code {
+    display: block;
+    padding: 10px;
+  }
+
+  ::v-deep table {
+    border-collapse: collapse;
+  }
+  ::v-deep td,
+  ::v-deep th {
+    border: 1px solid #ccc;
+    min-width: 50px;
+    height: 20px;
+  }
+  ::v-deep th {
+    background-color: #f1f1f1;
+  }
+
+  ::v-deep ul,
+  ::v-deep ol {
+    padding-left: 20px;
+  }
+
+  ::v-deep input[type="checkbox"] {
+    margin-right: 5px;
+  }
+}

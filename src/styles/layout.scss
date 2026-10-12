@@ -1,0 +1,40 @@
+// 内容区域的宽度
+.content-warp{
+  width: 7.3125rem /* 1404/192 */;
+}
+
+// card样式
+.card-wrap{
+  background-color: #fff;
+  border-radius: .041667rem /* 8/192 */;
+}
+
+// 文字显示一行
+.text-overflow-1{
+  text-overflow: ellipsis;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1; /* 最多显示1行 */
+}
+
+// 1px底边框
+.border-bottom{
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+// 表格标题样式
+.form-title {
+  font-size: 0.083333rem /* 16/192 */;
+  color: #000;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+}
+.form-title::before {
+  content: "";
+  width: 0.020833rem /* 4/192 */; /* Width of the vertical bar */
+  height: 0.083333rem /* 16/192 */; /* Height of the vertical bar */
+  background-color: #d7a780; /* Color of the bar */
+  margin-right: 0.041667rem; /* 8/192 */
+}

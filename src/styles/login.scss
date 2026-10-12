@@ -1,0 +1,182 @@
+@import "~@/styles/variables.scss";
+.login-container {
+  display: flex;
+  align-items: center;
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  margin: 0 auto;
+  background-image: url("/img/pages/login/bg.png");
+  background-size: 100% 100%;
+  font-size: .072917rem /* 14/192 */;
+}
+
+.login-weaper {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  margin: 0 auto;
+  width: 6.25rem /* 1200/192 */;
+  min-height: 2.916667rem /* 560/192 */;
+  background-color: #ffffff;
+  // box-shadow: -4px 5px 10px rgba(0, 0, 0, 0.4);
+  box-shadow: 0px .0625rem /* 12/192 */ .0625rem /* 12/192 */ 0px rgba(11, 17, 29, 0.06);
+  border-radius: .020833rem /* 4/192 */;
+  .el-input-group__append {
+    border: none;
+  }
+}
+
+.login-left,
+.login-border {
+  // position: relative;
+  min-height: .291667rem /* 56/192 */;
+  // align-items: center;
+  display: flex;
+}
+
+.login-left {
+  border-top-left-radius: .026042rem /* 5/192 */;
+  border-bottom-left-radius: .026042rem /* 5/192 */;
+  justify-content: center;
+  flex-direction: column;
+  // background-color: #3F6DFE;
+  background-color: #ffffff;
+  // color: #fff;
+  text-align: left;
+  float: left;
+  width: 2.291667rem /* 440/192 */;
+  position: relative;
+}
+
+.login-left .img {
+  height: 2.916667rem /* 560/192 */;
+}
+
+.login-time {
+  position: absolute;
+  left: .130208rem /* 25/192 */;
+  top: .130208rem /* 25/192 */;
+  width: 100%;
+  color: #fff;
+  font-weight: 200;
+  opacity: 0.9;
+  font-size: .09375rem /* 18/192 */;
+  overflow: hidden;
+}
+
+.login-left .title {
+  margin-top: .3125rem /* 60/192 */;
+  text-align: center;
+  // color: #fff;
+  color: rgb(3, 0, 0);
+  font-weight: 300;
+  letter-spacing: .010417rem /* 2/192 */;
+  font-size: .130208rem /* 25/192 */;
+}
+
+.login-border {
+  flex: 1;
+  border-left: none;
+  border-top-right-radius: .026042rem /* 5/192 */;
+  border-bottom-right-radius: .026042rem /* 5/192 */;
+  color: #fff;
+  background-color: #fff;
+  box-sizing: border-box;
+}
+
+.login-main {
+  margin: auto;
+  width: 2.604167rem /* 500/192 */;
+  box-sizing: border-box;
+}
+
+.login-title-logo {
+  display: flex;
+  align-items: center;
+  margin-bottom: .208333rem /* 40/192 */;
+  height: .208333rem /* 40/192 */;
+  line-height: .208333rem /* 40/192 */;
+  font-size: .104167rem /* 20/192 */;
+  text-align: center;
+  img {
+    width: .177083rem /* 34/192 */;
+    height: .177083rem /* 34/192 */;
+    margin-right: .052083rem /* 10/192 */;
+  }
+}
+
+.login-submit {
+  width: 100%;
+  height: .208333rem /* 40/192 */;
+  background: #0052D9;
+  border-radius: .010417rem /* 2/192 */;
+  color: #ffffff;
+  // color: #409eff;
+  // border: 1px solid #409eff;
+  // background: none;
+  font-size: .09375rem /* 18/192 */;
+  letter-spacing: .010417rem /* 2/192 */;
+  font-weight: 300;
+  cursor: pointer;
+  margin-top: .15625rem /* 30/192 */;
+  font-family: "neo";
+  transition: 0.25s;
+}
+
+.login-form {
+  margin: .052083rem /* 10/192 */ 0;
+
+  i {
+    color: #333;
+  }
+
+  .el-form-item__content {
+    width: 100%;
+  }
+
+  .el-form-item {
+    margin-bottom: .0625rem /* 12/192 */;
+  }
+
+  .el-input {
+    input {
+      // padding-bottom: 10px;
+      text-indent: .026042rem /* 5/192 */;
+      background: transparent;
+      border: none;
+      border-radius: 0;
+      color: #333;
+      border-bottom: 1px solid rgb(235, 237, 242);
+    }
+
+    .el-input__prefix {
+      i {
+        padding: 0 .026042rem /* 5/192 */;
+        font-size: .083333rem /* 16/192 */ !important;
+      }
+    }
+  }
+}
+
+.login-code {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  margin: 0px 0 0 .026042rem /* 5/192 */;
+}
+
+.login-code-img {
+  width: .520833rem /* 100/192 */;
+  height: .1875rem /* 36/192 */;
+  background-color: #fdfdfd;
+  border: 1px solid #f0f0f0;
+  color: #333;
+  font-size: .072917rem /* 14/192 */;
+  font-weight: bold;
+  letter-spacing: .026042rem /* 5/192 */;
+  line-height: .1875rem /* 36/192 */;
+  text-indent: .026042rem /* 5/192 */;
+  text-align: center;
+  cursor: pointer !important;
+}

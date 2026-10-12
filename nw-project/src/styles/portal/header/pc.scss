@@ -1,0 +1,185 @@
+.layerHeaderContainer {
+  width: 100%;
+  height: .333333rem /* 64/192 */;
+  box-sizing: border-box;
+  position: fixed;
+  z-index: 999;
+  
+  .headerWrap {
+    width: 7.5rem /* 1440/192 */;
+    height: 100%;
+    margin: 0 auto;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .logWarp {
+    display: flex;
+    align-items: center;
+    font-family: AlibabaPuHuiTi_3_95_ExtraBold;
+    font-size: 0.104167rem /* 20/192 */;
+    text-align: left;
+    font-style: normal;
+    z-index: 2;
+    cursor: pointer;
+    img {
+      width: 0.166667rem /* 32/192 */;
+      height: 0.166667rem /* 32/192 */;
+      margin-right: 0.052083rem /* 10/192 */;
+    }
+  }
+
+  .userWrap {
+    height: 100%;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: start;
+    align-items: center;
+    z-index: 10;
+
+    img {
+      width: 0.166667rem /* 32/192 */;
+      height: 0.166667rem /* 32/192 */;
+      margin-right: 0.104167rem /* 20/192 */;
+    }
+
+    .ulWrap {
+      height: 100%;
+      list-style-type: none;
+      display: flex;
+      flex-flow: row nowrap;
+      justify-content: start;
+      align-items: center;
+
+      .liWrap {
+        float: left;
+        cursor: pointer;
+        position: relative;
+
+        .title {
+          font-family: PingFangSC, PingFang SC;
+          font-weight: 400;
+          font-size: 0.072917rem /* 14/192 */;
+          line-height: 0.104167rem /* 20/192 */;
+          text-align: left;
+          font-style: normal;
+          span {
+            display: inline-block;
+            vertical-align: middle;
+            // max-width: 1.067708rem /* 205/192 */;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+          }
+        }
+
+        .userInfoWrap {
+          width: 0.776042rem /* 149/192 */;
+          // height: .677083rem /* 130/192 */;
+          background: #ffffff;
+          box-shadow: 0px 0.010417rem /* 2/192 */ 0.041667rem /* 8/192 */ 0px rgba(0, 0, 0, 0.16);
+          border-radius: 0.041667rem /* 8/192 */;
+          position: absolute;
+          top: 0.192708rem /* 37/192 */;
+          right: -0.015625rem /* 3/192 */;
+          padding: 0.104167rem /* 20/192 */ 0.078125rem /* 15/192 */;
+          box-sizing: border-box;
+          visibility: hidden;
+
+          .userItem {
+            width: 0.619792rem /* 119/192 */;
+            height: 0.208333rem /* 40/192 */;
+            line-height: 0.208333rem /* 40/192 */;
+            font-family: PingFangSC, PingFang SC;
+            font-weight: 400;
+            font-size: 0.072917rem /* 14/192 */;
+            color: #303133;
+            text-align: center;
+            font-style: normal;
+            margin-bottom: 0.052083rem /* 10/192 */;
+            cursor: pointer;
+          }
+
+          .userItem:hover {
+            background-color: #efefef;
+          }
+
+          .loginOut {
+            color: #fa6400;
+          }
+        }
+      }
+    }
+
+    .ulWrap:hover {
+      .liWrap {
+        .userInfoWrap {
+          visibility: visible;
+        }
+      }
+    }
+
+    .el-input {
+      width: 1.25rem /* 240/192 */;
+      margin-right: 0.25rem /* 48/192 */;
+    }
+    ::v-deep .el-input__inner {
+      height: 0.3125rem /* 60/192 */;
+      background-color: #195ec5;
+      border: none;
+      color: #fff;
+    }
+  }
+
+  .ulContainer {
+    height: 100%;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    z-index: 10;
+
+    .liContainer {
+      min-width: 0.416667rem /* 80/192 */;
+      height: 100%;
+      float: left;
+      margin-right: 0.25rem /* 48/192 */;
+      cursor: pointer;
+      display: flex;
+      flex-flow: row nowrap;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+      z-index: 2;
+
+      .headerTitleWrap {
+        font-family: PingFangSC, PingFang SC;
+        font-weight: 400;
+        font-size: 0.09375rem /* 18/192 */;
+        color: #fff;
+        line-height: 0.145833rem /* 28/192 */;
+        text-align: left;
+        font-style: normal;
+        vertical-align: middle;
+        white-space: nowrap;
+      }
+
+    }
+  }
+}
+
+.bg::before {
+  width: 100%;
+  height: var(--before-height, 0px);
+  z-index: 2;
+  position: absolute;
+  left: 0;
+  top: 0;
+  background-color: #fff;
+  display: block;
+  content: '';
+  transition: all .3s;
+  box-shadow:0 2px 6px 0 rgba(0,0,0,.1)
+}

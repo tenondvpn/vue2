@@ -1,0 +1,157 @@
+.layerContainer {
+  width: 100%;
+  height: 100%;
+  padding: 0px;
+  margin: 0px;
+  box-sizing: border-box;
+  position: relative;
+
+  .layerHeaderContainer {
+    width: 100%;
+    height: 0.375rem /* 72/192 */ !important;
+    background-color: #fff;
+    box-sizing: border-box;
+    position: fixed;
+    z-index: 10;
+
+    .headerContent {
+      height: 100%;
+      display: flex;
+      flex-flow: row nowrap;
+      justify-content: space-between;
+      align-items: center;
+
+      .logContainer {
+        width: 42px;
+        height: 48px;
+        display: inline-block;
+        margin-right: 99px;
+      }
+    }
+
+    .userContainer {
+      display: flex;
+      flex-flow: row nowrap;
+      justify-content: start;
+      align-items: center;
+
+      .btn {
+        width: 80px;
+        height: 36px;
+        line-height: 36px;
+        text-align: center;
+        background: linear-gradient(135deg, #4e9bff 0%, #2662ff 100%);
+        font-family: PingFangSC, PingFang SC;
+        font-weight: 400;
+        font-size: 14px;
+        color: #ffffff;
+        font-style: normal;
+        cursor: pointer;
+      }
+
+      .menuImg {
+        width: 32px;
+        height: 32px;
+        margin-left: 12px;
+      }
+
+      .closeImg {
+        width: 17px;
+        height: 17px;
+        margin-left: 12px;
+      }
+
+      img {
+        width: 32px;
+        height: 32px;
+        margin-right: 20px;
+      }
+
+      .ulWrap {
+        height: 96px;
+        list-style-type: none;
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: start;
+        align-items: center;
+
+        .liWrap {
+          float: left;
+          cursor: pointer;
+          position: relative;
+
+          .title {
+            font-family: PingFangSC, PingFang SC;
+            font-weight: 400;
+            font-size: 14px;
+            color: #303030;
+            line-height: 20px;
+            text-align: left;
+            font-style: normal;
+          }
+
+          .userInfoWrap {
+            width: 149px;
+            height: 130px;
+            background: #ffffff;
+            box-shadow: 0px 2px 8px 0px rgba(0, 0, 0, 0.16);
+            border-radius: 8px;
+            position: absolute;
+            top: 37px;
+            right: -3px;
+            padding: 20px 15px;
+            box-sizing: border-box;
+            visibility: hidden;
+
+            .userItem {
+              width: 119px;
+              height: 40px;
+              line-height: 40px;
+              font-family: PingFangSC, PingFang SC;
+              font-weight: 400;
+              font-size: 14px;
+              color: #000000;
+              text-align: center;
+              font-style: normal;
+              margin-bottom: 10px;
+              cursor: pointer;
+            }
+
+            .userItem:hover {
+              background-color: #efefef;
+            }
+
+            .loginOut {
+              color: #fa6400;
+            }
+          }
+        }
+      }
+
+      .ulWrap:hover {
+        .liWrap {
+          .userInfoWrap {
+            visibility: visible;
+          }
+        }
+      }
+    }
+  }
+
+  .mainContainer {
+    // width: 100%;
+    height: 100% !important;
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    // overflow-y: auto;
+    overflow-x: hidden;
+    padding-top: 96px !important;
+
+    .footerContainer {
+      width: 100%;
+      background: #000000;
+      padding: 0px !important;
+    }
+  }
+}
